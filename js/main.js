@@ -18,3 +18,34 @@
 // Gesticso i done dall’interfaccia,
 // quindi il task potrà essere anche segnato come done e non per forza cancellato
 // poi se l’utente vuole potrà anche cancellarlo del tutto.
+
+// aggiungo istanza VUE
+var app = new Vue({
+    el : '#app',
+    data : {
+
+        // array di oggetti con le cose da fare 
+        tasks : [
+            {
+                'text' : 'fare la spesa',
+                'done' : true
+            },
+            {
+                'text': 'fare il bucato',
+                'done': false
+            },
+            {
+                'text': 'andare ad allenamento',
+                'done': false
+            },
+            {
+                'text': "fare l'esercizio",
+                'done': false
+            },
+            {
+                'text': 'guardare un episodio della serie',
+                'done': false
+            },
+        ],
+    },
+});  
