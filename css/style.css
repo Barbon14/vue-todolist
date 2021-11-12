@@ -1,3 +1,9 @@
 .done {
     text-decoration: line-through;
+    color: lightgray;
+}
+
+.delete {
+    color: red;
+    cursor: pointer;
 }
