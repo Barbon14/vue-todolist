@@ -12,8 +12,10 @@
 
     <!-- istanza VUE -->
     <div id="app">
+        <input type="text" v-model="newTask">
+        <button @click="addTask">Aggiungi</button>
         <ul>
-            <li v-for="task, i in tasks" :class="task.done ? 'done' : null" :key="i">
+            <li v-for="(task, i) in tasks" :class="task.done ? 'done' : null" :key="i">
                 {{ task.text }}
                 <span class="delete" @click="deleteTask(i)">
                     <i class="far fa-times-circle"></i>

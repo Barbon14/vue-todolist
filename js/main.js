@@ -23,6 +23,13 @@
 var app = new Vue({
     el : '#app',
     data : {
+        
+        addedTask: {
+            'text' : '',
+            'done' : false
+        },
+
+        newTask: '',
 
         // array di oggetti con le cose da fare 
         tasks : [
@@ -47,11 +54,17 @@ var app = new Vue({
                 'done': false
             },
         ],
-    
     },
     methods : {
         deleteTask(index) {
-            this.tasks.splice(index, 1)
+            this.tasks.splice(index, 1);
         },
+        addTask() {
+            // this.addedTask.text = this.newTask;        
+            // this.tasks.push(this.addedTask);
+            // this.newTask = '';
+            // console.log(this.newTask);
+            // console.log(this.tasks);
+        }
     },
 });  
