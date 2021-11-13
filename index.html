@@ -12,11 +12,17 @@
 
     <!-- istanza VUE -->
     <div id="app">
-        <input type="text" v-model="newTask">
+
+        <!-- input per aggiungere una nuova task -->
+        <input type="text" v-model="newTaskText" @keyup.enter="addTask">
         <button @click="addTask">Aggiungi</button>
+
+        <!-- lista task -->
         <ul>
             <li v-for="(task, i) in tasks" :class="task.done ? 'done' : null" :key="i">
                 {{ task.text }}
+
+                <!-- icona cliccabile per cancellare la task -->
                 <span class="delete" @click="deleteTask(i)">
                     <i class="far fa-times-circle"></i>
                 </span>

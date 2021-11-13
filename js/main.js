@@ -23,13 +23,9 @@
 var app = new Vue({
     el : '#app',
     data : {
-        
-        addedTask: {
-            'text' : '',
-            'done' : false
-        },
 
-        newTask: '',
+        // v-model testo nova task
+        newTaskText : '',
 
         // array di oggetti con le cose da fare 
         tasks : [
@@ -56,15 +52,20 @@ var app = new Vue({
         ],
     },
     methods : {
+
+        // funzione per cancellare una task
         deleteTask(index) {
             this.tasks.splice(index, 1);
         },
+
+        // funzione per aggiungere una task
         addTask() {
-            // this.addedTask.text = this.newTask;        
-            // this.tasks.push(this.addedTask);
-            // this.newTask = '';
-            // console.log(this.newTask);
-            // console.log(this.tasks);
+            newTask = {
+                'text': this.newTaskText,
+                'done' : false
+            };
+            this.tasks.push(newTask);
+            this.newTaskText = '';
         }
     },
 });  
