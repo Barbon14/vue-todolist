@@ -1,9 +1,17 @@
+body {
+    font-family: sans-serif;
+}
+
 .done {
     text-decoration: line-through;
     color: lightgray;
 }
 
+.tasks_list li span {
+    cursor: pointer;
+
+}
+
 .delete {
     color: red;
-    cursor: pointer;
 }

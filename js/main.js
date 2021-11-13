@@ -66,6 +66,11 @@ var app = new Vue({
             };
             this.tasks.push(newTask);
             this.newTaskText = '';
+        },
+
+        // funzione per settare una task come fatta
+        taskDone(index) {
+            this.tasks[index].done = !this.tasks[index].done;
         }
     },
 });  

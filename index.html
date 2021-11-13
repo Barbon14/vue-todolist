@@ -17,11 +17,19 @@
         <input type="text" v-model="newTaskText" @keyup.enter="addTask">
         <button @click="addTask">Aggiungi</button>
 
-        <!-- lista task -->
-        <ul>
-            <li v-for="(task, i) in tasks" :class="task.done ? 'done' : null" :key="i">
-                {{ task.text }}
+        <div v-if="tasks.length === 0">
+            Non hai niente da fare.
+        </div>
 
+        <!-- lista task -->
+        <ul class="tasks_list">
+            <li v-for="(task, i) in tasks" :class="task.done ? 'done' : null" :key="i" >
+
+                <!-- testo cliccabiole per cambiare lo stato della task -->
+                <span @click="taskDone(i)">
+                    {{ task.text }}
+                </span>
+                
                 <!-- icona cliccabile per cancellare la task -->
                 <span class="delete" @click="deleteTask(i)">
                     <i class="far fa-times-circle"></i>
