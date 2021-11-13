@@ -14,28 +14,37 @@
     <div id="app">
 
         <!-- input per aggiungere una nuova task -->
-        <input type="text" v-model="newTaskText" @keyup.enter="addTask">
-        <button @click="addTask">Aggiungi</button>
-
-        <div v-if="tasks.length === 0">
-            Non hai niente da fare.
-        </div>
-
-        <!-- lista task -->
-        <ul class="tasks_list">
-            <li v-for="(task, i) in tasks" :class="task.done ? 'done' : null" :key="i" >
-
-                <!-- testo cliccabiole per cambiare lo stato della task -->
-                <span @click="taskDone(i)">
-                    {{ task.text }}
-                </span>
-                
-                <!-- icona cliccabile per cancellare la task -->
-                <span class="delete" @click="deleteTask(i)">
-                    <i class="far fa-times-circle"></i>
-                </span>
-            </li>
-        </ul>
+        <section>
+            <h2>Aggiungi un compito</h2>
+            <input type="text" v-model="newTaskText" @keyup.enter="addTask">
+            <button @click="addTask">Aggiungi</button>
+        </section>
+        
+        <section>
+            <h3>
+                Cose da fare:
+            </h3>
+            <h4 v-if="tasks.length === 0">
+                Non hai niente da fare.
+            </h4>
+            
+            <!-- lista task -->
+            <ul class="tasks_list">
+                <li v-for="(task, i) in tasks" :class="task.done ? 'done' : null" :key="i">
+            
+                    <!-- testo cliccabiole per cambiare lo stato della task -->
+                    <span @click="taskDone(i)">
+                        {{ task.text }}
+                    </span>
+            
+                    <!-- icona cliccabile per cancellare la task -->
+                    <span class="delete" @click="deleteTask(i)">
+                        <i class="far fa-times-circle"></i>
+                    </span>
+                </li>
+            </ul>
+        </section>
+        
     </div>
 
     <!-- Vue.js -->

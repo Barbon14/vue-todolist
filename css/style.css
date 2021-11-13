@@ -7,6 +7,10 @@ body {
     color: lightgray;
 }
 
+.tasks_list li {
+    margin: 10px 0;
+}
+
 .tasks_list li span {
     cursor: pointer;
 
